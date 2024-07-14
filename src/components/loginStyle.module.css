@@ -35,3 +35,12 @@
   margin-top: 40px;
   cursor: pointer;
 }
+
+@media (max-width: 540px) {
+  .form {
+    width: 90vw;
+  }
+  .submitBtn {
+    width: 60%;
+  }
+}

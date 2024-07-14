@@ -7,7 +7,7 @@ export default function Dashboard() {
   return (
     <div className="flex flex-row ">
       <Sidebar />
-      <div className="md:w-3/4 bg-gray-100 p-7 w-full">
+      <div className="md:w-3/4  p-7 w-full">
         <h1 className="text-4xl font-bold mb-7 text-left">
           Welcome {username}
         </h1>

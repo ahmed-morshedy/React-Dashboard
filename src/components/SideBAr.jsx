@@ -57,13 +57,13 @@ export default function Sidebar() {
               </li>
             </a>
             <a href="#">
-              <li className="sidebar-item bg-black">
+              <li className="sidebar-item ">
                 <DocumentIcon className="sidebar-icon" />
                 Blogs
               </li>
             </a>
             <a href="#">
-              <li className="sidebar-item">
+              <li className="sidebar-item bg-black">
                 <DocumentTextIcon className="sidebar-icon" />
                 Reports
               </li>

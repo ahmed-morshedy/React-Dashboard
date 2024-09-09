@@ -17,7 +17,7 @@ function BlogsTabel() {
   console.log(users);
   return (
     <div className=" border-b border-gray-200 shadow rounded-lg my-6 overflow-x-auto">
-      <table className=" overflow-x-scroll min-w-full  ">
+      <table className=" overflow-x-scroll min-w-full ">
         {users.length > 0 ? (
           <>
             <thead>

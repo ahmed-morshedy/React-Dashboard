@@ -1,31 +1,37 @@
 /* eslint-disable no-undef */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 function Profile() {
   let { Id } = useParams();
   const api_url = "https://dummyjson.com/users";
 
-  const [profile, setProfile] = useState([]);
+  const [profile, setProfile] = useState({});
 
   useEffect(() => {
     fetch(`${api_url}/${Id}`)
       .then((res) => res.json())
-      .then((data) => setProfile(data));
+      .then((data) => setProfile(data))
+      .catch((error) => console.error("Error fetching profile:", error));
   }, [Id]);
 
   console.log(profile);
+  console.log(3 > 2 > 1);
   return (
     <>
-      {profile.length === 0 ? (
-        <h1 className=" m-8 pt-10">Ooops , Can&apos;t Get Profile Data</h1>
+      {!profile.id ? (
+        <h1 className="m-8 pt-10">Ooops, Can&apos;t Get Profile Data</h1>
       ) : (
-        <div className=" mt-7 mb-7 flex flex-col justify-center items-center ">
-          {/* <h1>Profile</h1> */}
-          <div className="flex flex-col items-center">
-            <div className=" rounded-full mt-5 p-3 border border-emerald-500">
-              <img src={profile.image} alt="" />
-            </div>
-            <table className=" table mt-12 border border-emerald-500">
+        <div className="mt-7 mb-7 pl-2 pr-2 container">
+          <div className="rounded-full mt-5 p-3 0 flex flex-col justify-center items-center">
+            <img
+              src={profile.image}
+              alt={`${profile.firstName} ${profile.lastName}`}
+              className="border-2 border-cyan-600"
+            />
+          </div>
+          <div className="rounded-lg  mt-12 overflow-x-auto ">
+            <table className=" min-w-full w-full profile border-cyan-600 border shadow ">
               <tbody>
                 <tr>
                   <td>Name</td>
@@ -47,19 +53,19 @@ function Profile() {
                 </tr>
                 <tr>
                   <td>Country</td>
-                  <td>{profile.address.country}</td>
+                  <td>{profile.address?.country}</td>
                 </tr>
                 <tr>
                   <td>Company</td>
-                  <td>{profile.company.name}</td>
+                  <td>{profile.company?.name}</td>
                 </tr>
                 <tr>
                   <td>Department</td>
-                  <td>{profile.company.department}</td>
+                  <td>{profile.company?.department}</td>
                 </tr>
                 <tr>
-                  <td>Jop title</td>
-                  <td>{profile.company.title}</td>
+                  <td>Job title</td>
+                  <td>{profile.company?.title}</td>
                 </tr>
               </tbody>
             </table>

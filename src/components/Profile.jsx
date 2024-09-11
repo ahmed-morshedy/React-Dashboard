@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams ,Link } from "react-router-dom";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 
 function Profile() {

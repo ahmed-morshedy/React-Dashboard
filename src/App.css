@@ -32,6 +32,21 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+.arrow-icon {
+  position: fixed;
+  right: 45px;
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 320px) {
+  .arrow-icon {
+    right: 20px;
+    top: 50px;
+  }
+}
+
 
 .card {
   padding: 2em;

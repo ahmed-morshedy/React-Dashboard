@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 
 function Profile() {
   let { Id } = useParams();
@@ -15,14 +16,17 @@ function Profile() {
       .catch((error) => console.error("Error fetching profile:", error));
   }, [Id]);
 
-  console.log(profile);
-  console.log(3 > 2 > 1);
   return (
     <>
       {!profile.id ? (
         <h1 className="m-8 pt-10">Ooops, Can&apos;t Get Profile Data</h1>
       ) : (
         <div className="mt-7 mb-7 pl-2 pr-2 container">
+          <div className="arrow-icon">
+            <Link to={"/user"}>
+              <ArrowUturnLeftIcon className="w-6 h-6 text-blue-500 cursor-pointer" />
+            </Link>
+          </div>
           <div className="rounded-full mt-5 p-3 0 flex flex-col justify-center items-center">
             <img
               src={profile.image}

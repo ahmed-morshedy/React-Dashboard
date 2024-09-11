@@ -15,7 +15,7 @@ export default function Sidebar() {
   return (
     <>
       <button
-        className={`text-4xl absolute  z-10  top-64 bg-white rounded-full p-1  border-indigo-600 border md:hidden ${
+        className={`text-4xl fixed  z-10  top-64 bg-white rounded-full p-1  border-indigo-600 border md:hidden ${
           showSidebar ? "right-1" : " left-0"
         }`}
         onClick={() => setShowSidebar(!showSidebar)}
